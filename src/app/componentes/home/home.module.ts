@@ -5,12 +5,14 @@ import { HomeComponent } from './home.component';
 
 import {MatButtonModule} from '@angular/material/button';
 import { BuscarMascotaComponent } from '../buscar-mascota/buscar-mascota.component';
+import { LoginComponent } from '../login/login.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    BuscarMascotaComponent
+    BuscarMascotaComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

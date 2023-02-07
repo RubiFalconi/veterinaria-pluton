@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { BuscarMascotaComponent } from './componentes/buscar-mascota/buscar-mascota.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { HomeModule } from './componentes/home/home.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,9 @@ import { HomeComponent } from './componentes/home/home.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
