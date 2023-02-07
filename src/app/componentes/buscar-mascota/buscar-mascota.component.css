@@ -1,0 +1,13 @@
+.buscador{
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.example-container {
+    height: 500px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }

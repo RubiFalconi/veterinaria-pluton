@@ -16,7 +16,9 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
   declarations: [
     HomeComponent,
     BuscarMascotaComponent,
-    LoginComponent
+    LoginComponent,
+    
+    
   ],
   imports: [
     CommonModule,
