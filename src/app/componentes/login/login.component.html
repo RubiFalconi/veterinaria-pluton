@@ -1,1 +1,25 @@
-<p>login works!</p>
+<form class="container">
+    <mat-form-field class="example-full-width">
+      <mat-label> Correo </mat-label>
+      
+      <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+      
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Por favor ingrese un correo valido
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        El correo <strong> requerido </strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label> Contraseña </mat-label>
+        
+        <input type="password" matInput [formControl]="emailFormControl">
+        <mat-error></mat-error>
+
+    </mat-form-field>
+
+    <button mat-flat-button class="button-login"> Iniciar Sesión </button>
+
+</form>

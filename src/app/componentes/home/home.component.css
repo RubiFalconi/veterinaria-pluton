@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 300px 1fr;
     grid-template-rows: 40px calc(100vh - 40px);
+    position: relative;
 }
 
 header {
@@ -28,4 +29,17 @@ main {
     grid-template-rows: 40px calc(100vh - 40px);
     padding: 1rem;
     overflow: auto;
+}
+
+.login {
+    position: absolute;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
