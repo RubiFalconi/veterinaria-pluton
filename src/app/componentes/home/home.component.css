@@ -47,6 +47,7 @@ main {
     background-color: rgb(229, 250, 255);
     grid-template-rows: 40px calc(100vh - 40px);
     padding: 1rem;
+    background-color: #F6F8FC;
     overflow: auto;
 }
 
