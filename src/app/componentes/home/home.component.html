@@ -1,24 +1,24 @@
 <div class="container">
     <!-- CABECERA DE LA PAGINA -->
     <header>
-
+        <button mat-icon-button color="primary" (click)="ActionByMenu()">
+            <mat-icon>menu</mat-icon>
+        </button>
     </header>
 
     <!-- MENU DE LA PAGINA -->
-    <nav>
-        <a routerLink="" class="buton-nav"> HOME </a>
-        <a routerLink="busarMascota" class="buton-nav"> BUSCAR MASCOTA </a>
-        <!-- #endregion 
-        <button mat-button class="buton-nav" (click)="abrirBuscarMascota()">BUSCAR MASCOTA</button>
-        <button mat-button class="buton-nav" (click)="abrirIngresarHistorialClinico()">INGRESAR HITORIAL CLINICO</button>
-        -->
+    <!-- [ngClass]="{'open-menu' : openMenu}" -->
+    <nav class="menu" #menu>
+        <div>
+            <p>Hola Mundo</p>
+        </div>
     </nav>
-
+      
     <!-- CUERPO DE LA PAGINA -->
-    <main>
+    <main #main>
         <router-outlet></router-outlet>
     </main>
 
 
-    <app-login *ngIf="login" class="login"></app-login>
+   <!-- <app-login *ngIf="login" class="login"></app-login> -->
 </div>
