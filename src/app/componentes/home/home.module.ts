@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 
 import { BuscarMascotaComponent } from '../buscar-mascota/buscar-mascota.component';
 import { LoginComponent } from '../login/login.component';
+import { HistorialClinicoComponent } from '../historial-clinico/historial-clinico.component';
 
 // MATERIAL
 import { MatButtonModule } from '@angular/material/button';
@@ -16,13 +17,18 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
     HomeComponent,
     BuscarMascotaComponent,
-    LoginComponent,
-    
+    LoginComponent,    
+    HistorialClinicoComponent
     
   ],
   imports: [
@@ -37,7 +43,12 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatPaginatorModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatExpansionModule,
+    MatChipsModule
   ]
 })
 export class HomeModule { 
