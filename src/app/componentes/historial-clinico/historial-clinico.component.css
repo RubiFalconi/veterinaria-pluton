@@ -47,6 +47,22 @@ mat-chip {
 }
 
 .content-accordion{    
+    padding-top: 1.5rem;
+    height: calc(100vh - 300px);
+    overflow: auto;
+}
+
+.content-mat-accordion{    
     padding-top: 1rem;
 }
 
+.content-title{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    padding: 16px;
+}
+
+.content1{
+    display: flex;
+}
