@@ -2,6 +2,9 @@
     display: grid;
     grid-template-columns: 30% 1fr;
     gap: 1rem;
+    height: calc(100vh - 80px);
+    padding: 1rem;
+    overflow-y: scroll;
 }
 
 .content-filtro{
@@ -10,10 +13,10 @@
 
 .content-historial{
     padding: 1rem;
-    background-color: #F0F4FA;/*#f6f6f6;*/    
+    background-color: #F0F4FA;
     outline: 3px solid #F0F4FA;
     border-radius: 8px;
-    /*height: 240%;*/
+    margin-bottom: 1rem;
 }
 
 /*autocomplete*/
@@ -46,11 +49,13 @@ mat-chip {
     max-width: 200px;
 }
 
+/*
 .content-accordion{    
     padding-top: 1.5rem;
     height: calc(100vh - 300px);
     overflow: auto;
 }
+*/
 
 .content-mat-accordion{    
     padding-top: 1rem;
@@ -65,4 +70,34 @@ mat-chip {
 
 .content1{
     display: flex;
+}
+
+/*----------------------------------------*/
+/*----------------------------------------*/
+/*----------------------------------------*/
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+.container::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.container::-webkit-scrollbar:vertical {
+    width:12px;
+}
+
+.container::-webkit-scrollbar-button:increment,.container::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.container::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.container::-webkit-scrollbar-track {
+    border-radius: 8px;  
 }

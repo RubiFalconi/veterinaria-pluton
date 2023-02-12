@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { tokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private router : Router,
-    private renderer: Renderer2){
+    private renderer: Renderer2,
+    private tokenService : tokenService){
 
   }
 
@@ -32,7 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   ActionByMenu(){
-
+    console.log('GET TOKEN CLICK', this.tokenService.token)
     /* OBTENEMOS LA LISTA DE CLASES */
     const list: (string | {value: string})[] =  this.menu.nativeElement.classList;
 
@@ -64,5 +66,9 @@ export class HomeComponent implements OnInit {
       this.renderer.removeClass(this.main.nativeElement, "main-total");
       this.renderer.addClass(this.main.nativeElement, "main-normal");
     }
+  }
+
+  usuarioCorrecto(){
+    this.login = false
   }
 }

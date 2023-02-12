@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { OauthService } from 'src/app/service/oauth.service';
 import { tokenService } from 'src/app/service/token.service';
@@ -9,6 +9,9 @@ import { tokenService } from 'src/app/service/token.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+
+
+  @Output() usuarioCorrecto : EventEmitter<void> = new EventEmitter<void>();;
 
   registerForm: FormGroup
   submitted = false;
@@ -48,7 +51,7 @@ export class LoginComponent implements OnInit{
         
         const token = data.jwt;
         this.tokenService.setToken(token);
-
+        this.usuarioCorrecto.next()
         console.log('TOKEN', this.tokenService.token)
 			}
     })

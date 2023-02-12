@@ -15,8 +15,10 @@
       
     <!-- CUERPO DE LA PAGINA -->
     <main #main>
-        <router-outlet></router-outlet>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
     </main>
 
-    <app-login *ngIf="login" class="login"></app-login>
+    <app-login *ngIf="login" class="login" (usuarioCorrecto)="usuarioCorrecto()"></app-login>
 </div>
