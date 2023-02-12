@@ -6,6 +6,10 @@ import { HomeComponent } from './home.component';
 import { BuscarMascotaComponent } from '../buscar-mascota/buscar-mascota.component';
 import { LoginComponent } from '../login/login.component';
 
+import { OauthService } from 'src/app/service/oauth.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
+
 // MATERIAL
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -19,6 +23,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -44,7 +49,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatCardModule,
     MatSidenavModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
+  ],
+  providers: [
+    OauthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ]
 })
 export class HomeModule { 

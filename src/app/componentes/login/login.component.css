@@ -7,6 +7,8 @@ box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%),
     color: #039BE5;
     font-weight: 400;
     font-size: 1rem;
+    margin: 8px 0;
+    text-decoration:none;
 }
 
 /*---------------------*/
@@ -15,39 +17,44 @@ box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%),
 .container{
     display: flex;
     flex-direction: column;
-
     background-color: white;
-    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-    border-radius: 1rem;
-    padding: 2rem;
-    margin: 0 1rem;
-
+    /* box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%); */
+    border-radius: 0.5rem;
+    padding: 40px;
     width: 100%;
-    max-width: 500px;
-    height: 500px;
+    max-width: 393px;
+    height: 100%;
+    max-height: 410px;
+    outline: 1px solid #dadce0;
 }
 
 .main {
     background-color: white;
 }
 
-.title{
-    margin-top: 1rem;
-    font-size: 1.5rem;
+.logo{
+    font-size: 23px;
     text-align: center;
-    margin-bottom: 24px;
     color: #039BE5;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-.subTitle{
-    font-size: 2rem;
+.title{
+    font-size: 24px;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 8px;
 }
 
 .text {
     font-size: 1rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
 }
 
+
+.button-login {
+    height: 54px;
+    font-size: 20px;
+}
