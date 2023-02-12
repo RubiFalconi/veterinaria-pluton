@@ -30,14 +30,15 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistrarseComponent } from '../registrarse/registrarse.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     BuscarMascotaComponent,
     LoginComponent,    
-    HistorialClinicoComponent
-    
+    HistorialClinicoComponent,    
+    RegistrarseComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,23 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.content{
+    display: grid;
+    outline: 1px solid #d0d0d0a6;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.content2{
+    outline: 1px solid #d0d0d0a6;
+    border-radius: 0.5rem;
+    padding: 1rem; 
+}
+
+.content3{
+    justify-self: start;    
+}
