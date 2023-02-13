@@ -1,14 +1,19 @@
-.container{
+.container{    
+    padding: 5rem;
+}
+
+.content-form{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
-    padding: 1rem;
+    margin: 1rem;
 }
 
 .content{
-    display: grid;
-    outline: 1px solid #d0d0d0a6;
-    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    /*outline: 1px solid #d0d0d0a6;
+    border-radius: 0.5rem;*/
     padding: 1rem;
 }
 
@@ -20,4 +25,19 @@
 
 .content3{
     justify-self: start;    
+}
+
+.content-button{
+    display: flex;
+    justify-content: center;
+}
+
+.button-registrarse {
+    /*height: 54px;*/
+    font-size: 20px;
+    width: 30%;
+}
+
+.content-span{
+    margin-bottom: 1rem;
 }
