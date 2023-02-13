@@ -31,6 +31,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrarseComponent } from '../registrarse/registrarse.component';
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { RegistrarseComponent } from '../registrarse/registrarse.component';
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatStepperModule
   ],
   providers: [
     OauthService,
