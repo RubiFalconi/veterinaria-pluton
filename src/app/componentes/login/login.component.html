@@ -1,16 +1,25 @@
-<div class="container">
-  <label class="title">Veterinaria</label>
-  <label class="subTitle">Iniciar Sesión</label>
-  <label class="text">Ingrese sus datos</label>
+<form class="container" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <label class="logo">Veterinaria</label>
+  <h1 class="title">Iniciar sesión</h1>
+  <label class="text">Utiliza tu cuenta de empresa</label>
 
   <mat-form-field appearance="outline" color="primary">
     <mat-label> Correo </mat-label>
-    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+    <input type="email" matInput formControlName="usuario" placeholder="Ingrese su correo">
   </mat-form-field>
 
   <mat-form-field appearance="outline" color="primary">
-      <mat-label> Contraseña </mat-label>
-      <input type="password" matInput>
+    <mat-label> Contraseña </mat-label>
+
+    <input matInput 
+      formControlName="clave" 
+      [type]="hide ? 'password' : 'text'" 
+      placeholder="Ingrese su contraseña"
+      (keydown.enter)="onSubmit()">
+    
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
   </mat-form-field>
 
   <a href="#" class="c-blue">¿Has olvidado tu contraseña?</a>
@@ -20,4 +29,4 @@
     Iniciar Sesión 
   </button>
 
-</div>
+</form>

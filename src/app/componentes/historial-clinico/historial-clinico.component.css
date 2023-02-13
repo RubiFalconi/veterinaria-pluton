@@ -1,0 +1,103 @@
+.container{
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    gap: 1rem;
+    height: calc(100vh - 80px);
+    padding: 1rem;
+    overflow-y: scroll;
+}
+
+.content-filtro{
+    display: grid;
+}
+
+.content-historial{
+    padding: 1rem;
+    background-color: #F0F4FA;
+    outline: 3px solid #F0F4FA;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/*autocomplete*/
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+/*accordion*/
+.mat-mdc-form-field + .mat-mdc-form-field {
+    margin-left: 8px;
+}
+
+/*chips*/
+.example-box.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+ }
+  
+.example-chip .cdk-drop-list-dragging {
+transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/*chips*/  
+mat-chip {
+    max-width: 200px;
+}
+
+/*
+.content-accordion{    
+    padding-top: 1.5rem;
+    height: calc(100vh - 300px);
+    overflow: auto;
+}
+*/
+
+.content-mat-accordion{    
+    padding-top: 1rem;
+}
+
+.content-title{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    padding: 16px;
+}
+
+.content1{
+    display: flex;
+}
+
+/*----------------------------------------*/
+/*----------------------------------------*/
+/*----------------------------------------*/
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+.container::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.container::-webkit-scrollbar:vertical {
+    width:12px;
+}
+
+.container::-webkit-scrollbar-button:increment,.container::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.container::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.container::-webkit-scrollbar-track {
+    border-radius: 8px;  
+}

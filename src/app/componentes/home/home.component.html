@@ -7,17 +7,18 @@
     </header>
 
     <!-- MENU DE LA PAGINA -->
-    <!-- [ngClass]="{'open-menu' : openMenu}" -->
     <nav class="menu" #menu>
         <a routerLink="" class="buton-nav"> HOME </a>
         <a routerLink="busarMascota" class="buton-nav"> BUSCAR MASCOTA </a>
+        <a routerLink="historialClinico" class="buton-nav"> HISTORIAL CLINICO</a>
     </nav>
       
     <!-- CUERPO DE LA PAGINA -->
     <main #main>
-        <router-outlet></router-outlet>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
     </main>
 
-
-   <!-- <app-login *ngIf="login" class="login"></app-login> -->
+    <app-login *ngIf="login" class="login" (usuarioCorrecto)="usuarioCorrecto()"></app-login>
 </div>

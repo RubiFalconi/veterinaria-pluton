@@ -5,6 +5,11 @@ import { HomeComponent } from './home.component';
 
 import { BuscarMascotaComponent } from '../buscar-mascota/buscar-mascota.component';
 import { LoginComponent } from '../login/login.component';
+import { HistorialClinicoComponent } from '../historial-clinico/historial-clinico.component';
+
+import { OauthService } from 'src/app/service/oauth.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
 
 // MATERIAL
 import { MatButtonModule } from '@angular/material/button';
@@ -16,18 +21,24 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatChipsModule} from '@angular/material/chips';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
+import { HttpClientModule } from '@angular/common/http';
+import { RegistrarseComponent } from '../registrarse/registrarse.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     BuscarMascotaComponent,
-    LoginComponent,
-    
-    
+    LoginComponent,    
+    HistorialClinicoComponent,    
+    RegistrarseComponent
   ],
   imports: [
     CommonModule,
@@ -42,9 +53,23 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatPaginatorModule,
     MatIconModule,
     MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatExpansionModule,
+    MatChipsModule,
     MatSidenavModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
+  ],
+  providers: [
+    OauthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ]
 })
 export class HomeModule { 
