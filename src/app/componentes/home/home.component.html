@@ -8,9 +8,29 @@
 
     <!-- MENU DE LA PAGINA -->
     <nav class="menu" #menu>
-        <a routerLink="" class="buton-nav"> HOME </a>
-        <a routerLink="busarMascota" class="buton-nav"> BUSCAR MASCOTA </a>
-        <a routerLink="historialClinico" class="buton-nav"> HISTORIAL CLINICO</a>
+
+        <mat-list>
+
+            <mat-list-item> 
+                <a routerLink="" class="buton-nav aLink content-title">
+                    <mat-icon class="item-icon">home</mat-icon> HOME 
+                </a>
+            </mat-list-item>
+
+            <mat-list-item class=> 
+                <a routerLink="busarMascota" class="buton-nav aLink content-title"> 
+                    <mat-icon class="item-icon">pets</mat-icon> BUSCAR MASCOTA 
+                </a>
+            </mat-list-item>
+
+            <mat-list-item> 
+                <a routerLink="historialClinico" class="buton-nav aLink content-title">
+                    <mat-icon class="item-icon">pending_actions</mat-icon> HISTORIAL CLINICO
+                </a>
+            </mat-list-item>
+
+        </mat-list>
+ 
     </nav>
       
     <!-- CUERPO DE LA PAGINA -->
@@ -20,5 +40,5 @@
         </div>
     </main>
 
-    <app-login *ngIf="login" class="login" (usuarioCorrecto)="usuarioCorrecto()"></app-login>
+    <!-- <app-login *ngIf="login" class="login" (usuarioCorrecto)="usuarioCorrecto()"></app-login> -->
 </div>
