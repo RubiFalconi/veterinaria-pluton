@@ -1,3 +1,7 @@
+.container{
+  padding: 1rem;
+}
+
 .buscador {
   display: grid;
   grid-template-columns: 30% 70%;
