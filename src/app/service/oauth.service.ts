@@ -58,9 +58,7 @@ export class OauthService {
   }
 
   setJwt( jwt : string){
-    //this.cookieService.set('jwt', jwt, 900, '/');
-    
-    this.cookieService.set('jwt', jwt, 0.0416666666666667, '/', undefined, true, 'Strict');
+    this.cookieService.set('jwt', jwt, 900, '/');
   }
   
   // Método que obtiene el valor de la cookie jwt
