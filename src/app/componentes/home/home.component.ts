@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { OauthService } from 'src/app/service/oauth.service';
 import { tokenService } from 'src/app/service/token.service';
 
 @Component({
@@ -19,8 +20,15 @@ export class HomeComponent implements OnInit {
   constructor(
     private router : Router,
     private renderer: Renderer2,
-    private tokenService : tokenService){
+    private tokenService : tokenService,
+    public  oAuth: OauthService) {
 
+    // Validar si el usuario tiene una cookie activa
+    if (this.oAuth.getJwt().length > 0){
+      const token = this.oAuth.getJwt();
+      this.tokenService.setToken(token);
+      this.login = false
+    }
   }
 
   ngOnInit(): void {}
