@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { OauthService } from 'src/app/service/oauth.service';
+import { UsuarioControllerNg } from 'src/app/service/peticiones/usuarioControllerNG';
 import { tokenService } from 'src/app/service/token.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class HomeComponent implements OnInit {
     private router : Router,
     private renderer: Renderer2,
     private tokenService : tokenService,
-    public  oAuth: OauthService) {
+    public  oAuth: OauthService,
+    public usaurio : UsuarioControllerNg) {
 
     // Validar si el usuario tiene una cookie activa
     if (this.oAuth.getJwt().length > 0){
@@ -78,5 +80,13 @@ export class HomeComponent implements OnInit {
 
   usuarioCorrecto(){
     this.login = false
+  }
+
+  listar(){
+    this.usaurio.listAllUsuario().subscribe({
+      next : (value) => {
+          console.log('Usuarios', value)
+      },
+    })
   }
 }
