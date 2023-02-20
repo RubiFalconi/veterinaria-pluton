@@ -9,7 +9,7 @@ import { HistorialClinicoComponent } from '../historial-clinico/historial-clinic
 
 import { OauthService } from 'src/app/service/oauth.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
+//import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
 
 // MATERIAL
 import { MatButtonModule } from '@angular/material/button';
@@ -66,12 +66,14 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatStepperModule
   ],
   providers: [
+    /*
     OauthService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
     }
+    */
   ]
 })
 export class HomeModule { 

@@ -11,7 +11,7 @@ import { tokenService } from 'src/app/service/token.service';
 })
 export class HomeComponent implements OnInit {
 
-  login : boolean = true
+  viewLogin : boolean = true
   //openMenu : boolean = false;
   //firstMenu : boolean = true;
   
@@ -26,11 +26,14 @@ export class HomeComponent implements OnInit {
     public usaurio : UsuarioControllerNg) {
 
     // Validar si el usuario tiene una cookie activa
+    /*
     if (this.oAuth.getJwt().length > 0){
       const token = this.oAuth.getJwt();
       this.tokenService.setToken(token);
-      this.login = false
+      this.viewLogin = false
     }
+    */
+    
   }
 
   ngOnInit(): void {}
@@ -79,7 +82,8 @@ export class HomeComponent implements OnInit {
   }
 
   usuarioCorrecto(){
-    this.login = false
+    // Ocultar el Componente Login
+    this.viewLogin = false
   }
 
   listar(){

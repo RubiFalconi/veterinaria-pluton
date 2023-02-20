@@ -11,18 +11,12 @@ export class OauthService {
 
   private _servidor: string;
   private controller: string;
-  
-  public logeado: boolean;
 
+  public logeado: boolean;
   private header : HttpHeaders
 
-  constructor(
-    private httpClient: HttpClient,
-    private cookieService: CookieService
-    ) {
-
+  constructor(private httpClient: HttpClient) {
     this._servidor = 'http://' + window.location.hostname +':8080/pluton/api';
-    
     this.controller = '/auth';
     this.logeado = false;
 
@@ -41,6 +35,7 @@ export class OauthService {
   }
 
   // Método que realiza la autenticación y almacena la cookie en el cliente
+  /*
   authenticate(username: string, password: string) {
 
     let metodo = this.servidor + this.controller + '/authenticate';
@@ -52,7 +47,6 @@ export class OauthService {
 
     return this.httpClient.post<any>(metodo, JSON.stringify(params), { headers: this.header })
       .subscribe(data => {
-        // Almacena la cookie en el cliente
         this.cookieService.set('jwt', data.jwt, 900, '/');
     })
   }
@@ -61,10 +55,10 @@ export class OauthService {
     this.cookieService.set('jwt', jwt, 900, '/');
   }
   
-  // Método que obtiene el valor de la cookie jwt
   getJwt(): string {
     return this.cookieService.get('jwt');
   }
+  */
 
   public get servidor(): string {
     return this._servidor;
