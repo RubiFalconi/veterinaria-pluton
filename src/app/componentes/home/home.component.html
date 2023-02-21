@@ -33,6 +33,10 @@
                 </a>
             </mat-list-item>
 
+            <mat-list-item> 
+                <button (click)="listar()">LISTAR USUARIOS</button>
+            </mat-list-item>
+
         </mat-list>
 
     </nav>
@@ -44,5 +48,5 @@
         </div>
     </main>
 
-    <!-- <app-login *ngIf="login" class="login" (usuarioCorrecto)="usuarioCorrecto()"></app-login> -->
+    <app-login *ngIf="viewLogin" class="login" (usuarioCorrecto)="usuarioCorrecto()"></app-login>
 </div>

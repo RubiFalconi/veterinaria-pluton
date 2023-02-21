@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OauthService } from 'src/app/service/oauth.service';
 import { tokenService } from 'src/app/service/token.service';
 
@@ -10,7 +10,6 @@ import { tokenService } from 'src/app/service/token.service';
 })
 export class LoginComponent implements OnInit{
 
-
   @Output() usuarioCorrecto : EventEmitter<void> = new EventEmitter<void>();;
 
   registerForm: FormGroup
@@ -19,6 +18,7 @@ export class LoginComponent implements OnInit{
 
   // by filed password
   hide = true;
+
   constructor(
     private formBuilder: FormBuilder,
     public  oAuth: OauthService,
@@ -26,12 +26,11 @@ export class LoginComponent implements OnInit{
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-			usuario: ['', Validators.required],
-			clave: ['', Validators.required]
-		});
+			usuario : ['', Validators.required],
+			clave   : ['', Validators.required]
+		})
 
-    this.registerForm.setValue({ usuario: 'nuevaEmpresa@gmail.com', clave: 'W$74573306_' });
-
+    this.registerForm.setValue({ usuario: 'nuevaEmpresa@gmail.com', clave: 'W$74573306_' })
   }
 
   get c() { return this.registerForm.controls; }
@@ -41,20 +40,23 @@ export class LoginComponent implements OnInit{
   onSubmit() {
 		this.submitted = true;
 		
+    // Si hay un error en el formulario
     if (this.registerForm.invalid)
 			return;
-
+    
+    // Iniciar Sesion
 		this.oAuth.login(this.v.usuario, this.v.clave).subscribe({
       next: (data) => {
-				//this.visible = !(data as boolean);
-				//this.sendUsuario.emit(result.user);
-        
+        //Setear el token en el servicio
         const token = data.jwt;
         this.tokenService.setToken(token);
+        
+        //Crear cookie en el cliente, setear el token como dato de la cookie
+        //this.oAuth.setJwt(token)
         this.usuarioCorrecto.next()
-        console.log('TOKEN', this.tokenService.token)
-			}
+			}, error(err) {
+        console.log(err)
+      },
     })
 	}
-
 }

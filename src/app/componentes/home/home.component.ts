@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { OauthService } from 'src/app/service/oauth.service';
+import { UsuarioControllerNg } from 'src/app/service/peticiones/usuarioControllerNG';
 import { tokenService } from 'src/app/service/token.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { tokenService } from 'src/app/service/token.service';
 })
 export class HomeComponent implements OnInit {
 
-  login : boolean = true
+  viewLogin : boolean = true
   //openMenu : boolean = false;
   //firstMenu : boolean = true;
   isSideNavOpen: boolean = false;
@@ -21,7 +23,17 @@ export class HomeComponent implements OnInit {
     private router : Router,
     private renderer: Renderer2,
     private tokenService : tokenService,
-    private elementRef: ElementRef){
+    public  oAuth: OauthService,
+    public usaurio : UsuarioControllerNg) {
+
+    // Validar si el usuario tiene una cookie activa
+    /*
+    if (this.oAuth.getJwt().length > 0){
+      const token = this.oAuth.getJwt();
+      this.tokenService.setToken(token);
+      this.viewLogin = false
+    }
+    */
     
   }
 
@@ -76,6 +88,15 @@ export class HomeComponent implements OnInit {
   }
 
   usuarioCorrecto(){
-    this.login = false
+    // Ocultar el Componente Login
+    this.viewLogin = false
+  }
+
+  listar(){
+    this.usaurio.listAllUsuario().subscribe({
+      next : (value) => {
+          console.log('Usuarios', value)
+      },
+    })
   }
 }
