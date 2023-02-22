@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   viewLogin : boolean = true
   //openMenu : boolean = false;
   //firstMenu : boolean = true;
+  isSideNavOpen: boolean = false;
   
   @ViewChild("menu") menu: ElementRef;
   @ViewChild("main") main: ElementRef;
@@ -48,6 +49,7 @@ export class HomeComponent implements OnInit {
 
   ActionByMenu(){
     console.log('GET TOKEN CLICK', this.tokenService.token)
+    
     /* OBTENEMOS LA LISTA DE CLASES */
     const list: (string | {value: string})[] =  this.menu.nativeElement.classList;
 
@@ -62,6 +64,7 @@ export class HomeComponent implements OnInit {
       this.renderer.addClass(this.menu.nativeElement, "close-menu");
 
       this.renderer.addClass(this.main.nativeElement, "main-total");
+      this.isSideNavOpen = true
     }
 
     if(existOpenMenu){
@@ -70,6 +73,8 @@ export class HomeComponent implements OnInit {
 
       this.renderer.removeClass(this.menu.nativeElement, "main-normal");
       this.renderer.addClass(this.main.nativeElement, "main-total");
+
+      this.isSideNavOpen = true
     }
 
     if(existCloseMenu){
@@ -78,6 +83,7 @@ export class HomeComponent implements OnInit {
 
       this.renderer.removeClass(this.main.nativeElement, "main-total");
       this.renderer.addClass(this.main.nativeElement, "main-normal");
+      this.isSideNavOpen = false
     }
   }
 

@@ -2,7 +2,7 @@
     <!-- CABECERA DE LA PAGINA -->
     <header>
         <button mat-icon-button color="primary" (click)="ActionByMenu()">
-            <mat-icon>menu</mat-icon>
+            <mat-icon class="icon-color">menu</mat-icon>
         </button>
     </header>
 
@@ -11,21 +11,25 @@
 
         <mat-list>
 
-            <mat-list-item> 
+            <mat-list-item class="mat-list-item-a"> 
                 <a routerLink="" class="buton-nav aLink content-title">
-                    <mat-icon class="item-icon">home</mat-icon> HOME 
+                    <mat-icon class="item-icon">home</mat-icon> HOME
+                    <span class="nav-tooltip" *ngIf="isSideNavOpen">HOME</span> 
                 </a>
             </mat-list-item>
+            
 
-            <mat-list-item class=> 
+            <mat-list-item class="mat-list-item-a"> 
                 <a routerLink="busarMascota" class="buton-nav aLink content-title"> 
-                    <mat-icon class="item-icon">pets</mat-icon> BUSCAR MASCOTA 
+                    <mat-icon class="item-icon">pets</mat-icon> BUSCAR MASCOTA
+                    <span class="nav-tooltip" *ngIf="isSideNavOpen">BUSCAR MASCOTA</span> 
                 </a>
             </mat-list-item>
 
-            <mat-list-item> 
+            <mat-list-item class="mat-list-item-a"> 
                 <a routerLink="historialClinico" class="buton-nav aLink content-title">
                     <mat-icon class="item-icon">pending_actions</mat-icon> HISTORIAL CLINICO
+                    <span class="nav-tooltip" *ngIf="isSideNavOpen">HISTORIAL CLINICO</span>
                 </a>
             </mat-list-item>
 
@@ -34,9 +38,9 @@
             </mat-list-item>
 
         </mat-list>
- 
+
     </nav>
-      
+    
     <!-- CUERPO DE LA PAGINA -->
     <main #main>
         <div>
