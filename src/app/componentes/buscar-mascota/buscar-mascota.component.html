@@ -1,17 +1,17 @@
 <div class="container">
-  <div class="buscador">
+  <div class="buscador" [formGroup]="form">
     <mat-form-field appearance="outline">
-      <mat-label>Buscar Mascota</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let food of foods" [value]="food.value">
-          {{food.viewValue}}
+      <mat-label>Busqueda Por</mat-label>
+      <mat-select formControlName="busquedaPor">
+        <mat-option *ngFor="let lista of busqueda" [value]="lista.id">
+          {{lista.desc}}
         </mat-option>
       </mat-select>
     </mat-form-field>
     
     <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="" value="">
+      <mat-label>Busqueda</mat-label>
+      <input matInput placeholder="" value="" formControlName="busqueda">
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
   </div>

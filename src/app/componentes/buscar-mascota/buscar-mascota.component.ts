@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -45,9 +46,9 @@ const NAMES: string[] = [
 ];
 
 //interface select
-interface Food {
-  value: string;
-  viewValue: string;
+interface Busqueda {
+  id: string;
+  desc: string;
 }
 
 /**
@@ -67,19 +68,29 @@ export class BuscarMascotaComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+  form: FormGroup;
+
   //data select
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
+  busqueda: Busqueda[] = [
+    {id: '1', desc: 'DNI Cliente'},
+    {id: '2', desc: 'Nro Historial Clínico'}
   ];
 
-  constructor() {
+  constructor(private formBuilder: FormBuilder) {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
+
+    this.buildForm();
+  }
+
+  buildForm(){
+    this.form = this.formBuilder.group({
+      busquedaPor: ['', Validators.required],      
+      busqueda: ['', Validators.required]
+    });
   }
 
   ngAfterViewInit() {
