@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit{
 			clave   : ['', Validators.required]
 		})
 
-    this.registerForm.setValue({ usuario: 'nuevaEmpresa@gmail.com', clave: 'W$74573306_' })
+    this.registerForm.setValue({ usuario: 'nuevaEmpresa@gmail.com', clave: '123456' })
   }
 
   get c() { return this.registerForm.controls; }
