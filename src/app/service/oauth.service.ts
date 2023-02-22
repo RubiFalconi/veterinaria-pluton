@@ -31,7 +31,7 @@ export class OauthService {
       password : clave
     } as AuthenticationRequest
 
-    return this.httpClient.post(metodo, JSON.stringify(params), { headers: this.header})
+    return this.httpClient.post(metodo, JSON.stringify(params), { headers: this.header, withCredentials: true})
   }
 
   // Método que realiza la autenticación y almacena la cookie en el cliente

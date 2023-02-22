@@ -33,6 +33,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrarseComponent } from '../registrarse/registrarse.component';
 import {MatStepperModule} from '@angular/material/stepper';
+import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
 
 @NgModule({
   declarations: [
@@ -68,14 +69,12 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatStepperModule
   ],
   providers: [
-    /*
     OauthService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
     }
-    */
   ]
 })
 export class HomeModule { 

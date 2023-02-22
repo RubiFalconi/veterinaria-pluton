@@ -9,7 +9,6 @@ import { tokenService } from '../token.service';
 export class UsuarioControllerNg {
     private url: string;
     private headers: HttpHeaders;
-    private requestOptions: object;
     
     constructor(private httpClient: HttpClient, 
                 private oauth: OauthService,
@@ -17,19 +16,13 @@ export class UsuarioControllerNg {
         
         this.url = this.oauth.servidor + '/cliente';
         this.headers = new HttpHeaders({
-        //'Authorization': 'Bearer ' + this.tokenService.token,
-        'Content-Type': 'application/json'
+            /*'Authorization': 'Bearer ' + this.tokenService.token,*/
+            'Content-Type': 'application/json'
         });
-
-        this.requestOptions = {
-        headers: this.headers,
-        withCredentials: true
-        // Otros opciones de solicitud
-        };
     }
 
     listAllUsuario(): Observable<any> {
         const metodo = this.url + '/1';
-        return this.httpClient.get(metodo, this.requestOptions);
+        return this.httpClient.get(metodo, {headers: this.headers, withCredentials: true});
     }
 }
