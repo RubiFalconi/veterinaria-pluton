@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 import { BuscarMascotaComponent } from '../buscar-mascota/buscar-mascota.component';
 import { HistorialClinicoComponent } from '../historial-clinico/historial-clinico.component';
 import { ServiciosComponent } from '../servicios/servicios.component';
+import { RegistrarseComponent } from '../registrarse/registrarse.component';
 
 const routes : Routes = [
   {
@@ -12,7 +13,8 @@ const routes : Routes = [
     children : [
       { path: 'busarMascota', component: BuscarMascotaComponent },
       { path: 'historialClinico', component: HistorialClinicoComponent },
-      { path: 'servicios', component: ServiciosComponent }
+      { path: 'servicios', component: ServiciosComponent },
+      { path: 'registrarse', component: RegistrarseComponent }
     ]
   }
 ]

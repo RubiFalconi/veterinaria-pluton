@@ -34,6 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistrarseComponent } from '../registrarse/registrarse.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
+import { DialogPerfilEmpresaComponent } from './dialog-perfil-empresa/dialog-perfil-empresa.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,8 @@ import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
     LoginComponent,    
     HistorialClinicoComponent,    
     RegistrarseComponent,
-    ServiciosComponent
+    ServiciosComponent,
+    DialogPerfilEmpresaComponent
   ],
   imports: [
     CommonModule,
@@ -66,7 +70,10 @@ import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
     MatListModule,
     MatToolbarModule,
     HttpClientModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDialogModule,
+    MatMenuModule
+
   ],
   providers: [
     OauthService,

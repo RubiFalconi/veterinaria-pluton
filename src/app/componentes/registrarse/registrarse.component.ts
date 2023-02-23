@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 //interface select
 interface Food {
@@ -14,7 +15,7 @@ interface Food {
 })
 export class RegistrarseComponent {
   formGroup: FormGroup;
-  
+  actualizar: boolean = false;
   //data select
   foods: Food[] = [
     {value: 'steak-0', viewValue: 'Steak'},
@@ -30,13 +31,19 @@ export class RegistrarseComponent {
     secondCtrl: ['', Validators.required],
   });
 
-  constructor( private formBuilder: FormBuilder ) { }
+  constructor( private formBuilder: FormBuilder,
+               private route: ActivatedRoute) 
+  { }
 
   public ngOnInit() {
     this.buildForm();
+    this.actualizar = Boolean(this.route.snapshot.queryParamMap.get('value'));
+    console.log('ac', this.actualizar);
+    this.actualizar = false;
+    console.log('ac 2', this.actualizar);
   }
 
-  private buildForm(){
+   private buildForm(){
     this.formGroup = this.formBuilder.group({
       ruc: ['', Validators.required],      
       razonSocial: ['', Validators.required],
@@ -54,4 +61,7 @@ export class RegistrarseComponent {
   registrarse(){
     console.log(this.formGroup.value)
   }
+
+  
+
 }
