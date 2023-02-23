@@ -9,9 +9,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HomeComponent } from './componentes/home/home.component';
 import { HomeModule } from './componentes/home/home.module';
 
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

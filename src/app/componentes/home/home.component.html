@@ -39,6 +39,13 @@
                 </a>
             </mat-list-item>
 
+            <mat-list-item class="mat-list-item-a"> 
+                <a routerLink="servicios" class="buton-nav aLink content-title">
+                    <mat-icon class="item-icon">add_business</mat-icon> SERVICIOS
+                    <span class="nav-tooltip" *ngIf="isSideNavOpen">SERVICIOS</span>
+                </a>
+            </mat-list-item>
+
             <mat-list-item> 
                 <button (click)="listar()">LISTAR USUARIOS</button>
             </mat-list-item>
@@ -54,5 +61,7 @@
         </div>
     </main>
 
-    <app-login *ngIf="viewLogin" class="login" (usuarioCorrecto)="usuarioCorrecto()"></app-login>
+    <!--
+   <app-login *ngIf="viewLogin" class="login" (usuarioCorrecto)="usuarioCorrecto()"></app-login>
+   -->
 </div>

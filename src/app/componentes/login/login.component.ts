@@ -47,9 +47,11 @@ export class LoginComponent implements OnInit{
     // Iniciar Sesion
 		this.oAuth.login(this.v.usuario, this.v.clave).subscribe({
       next: (data) => {
+
         //Setear el token en el servicio
         const token = data.jwt;
         this.tokenService.setToken(token);
+        console.log('token', this.tokenService.token)
         
         //Crear cookie en el cliente, setear el token como dato de la cookie
         //this.oAuth.setJwt(token)

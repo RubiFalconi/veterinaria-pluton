@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { BuscarMascotaComponent } from '../buscar-mascota/buscar-mascota.component';
 import { LoginComponent } from '../login/login.component';
 import { HistorialClinicoComponent } from '../historial-clinico/historial-clinico.component';
+import { ServiciosComponent } from 'src/app/componentes/servicios/servicios.component';
 
 import { OauthService } from 'src/app/service/oauth.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -32,6 +33,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrarseComponent } from '../registrarse/registrarse.component';
 import {MatStepperModule} from '@angular/material/stepper';
+import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     BuscarMascotaComponent,
     LoginComponent,    
     HistorialClinicoComponent,    
-    RegistrarseComponent
+    RegistrarseComponent,
+    ServiciosComponent
   ],
   imports: [
     CommonModule,
@@ -66,14 +69,12 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatStepperModule
   ],
   providers: [
-    /*
     OauthService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
     }
-    */
   ]
 })
 export class HomeModule { 
