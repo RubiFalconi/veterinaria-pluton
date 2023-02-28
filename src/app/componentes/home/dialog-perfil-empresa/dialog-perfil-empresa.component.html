@@ -1,0 +1,14 @@
+<mat-dialog-content>
+    Rubi Falconi Montañez
+    rubifm.19@gmail.com
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-menu-item (click)="callModificarDatos()" routerLink="registrarse" [queryParams]="{value:this.modificar}" > Modificar Datos</button>
+    <button mat-menu-item> Cerrar Sesión </button>
+</mat-dialog-actions>
+
+
+<!--mat-dialog-actions>
+    <button mat-button mat-dialog-close>Modificar Datos</button>
+    <button mat-button mat-dialog-close>Cerrar Sesión</button>
+</mat-dialog-actions-->

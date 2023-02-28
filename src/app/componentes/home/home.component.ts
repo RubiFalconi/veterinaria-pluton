@@ -4,6 +4,10 @@ import { OauthService } from 'src/app/service/oauth.service';
 import { UsuarioControllerNg } from 'src/app/service/peticiones/usuarioControllerNG';
 import { tokenService } from 'src/app/service/token.service';
 
+import {MatDialog} from '@angular/material/dialog';
+import {MatMenuTrigger} from '@angular/material/menu';
+import { DialogPerfilEmpresaComponent } from '../home/dialog-perfil-empresa/dialog-perfil-empresa.component';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,13 +22,16 @@ export class HomeComponent implements OnInit {
   
   @ViewChild("menu") menu: ElementRef;
   @ViewChild("main") main: ElementRef;
+  //button matDialog
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger;
 
   constructor(
     private router : Router,
     private renderer: Renderer2,
     private tokenService : tokenService,
     public  oAuth: OauthService,
-    public usaurio : UsuarioControllerNg) {
+    public usaurio : UsuarioControllerNg, 
+    public dialog: MatDialog ) {
 
     // Validar si el usuario tiene una cookie activa
     
@@ -96,5 +103,14 @@ export class HomeComponent implements OnInit {
           console.log('Usuarios', value)
       },
     })
+  }
+
+  //metodo matDialog
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogPerfilEmpresaComponent, {restoreFocus: false});
+
+    // Manually restore focus to the menu trigger since the element that
+    // opens the dialog won't be in the DOM any more when the dialog closes.
+    dialogRef.afterClosed().subscribe(() => this.menuTrigger.focus());
   }
 }

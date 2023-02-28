@@ -4,6 +4,21 @@
         <button mat-icon-button color="primary" (click)="ActionByMenu()">
             <mat-icon class="icon-color">menu</mat-icon>
         </button>
+
+        <button mat-icon-button class="boton-empresa" [matMenuTriggerFor]="menu" #menuTrigger> 
+            <mat-icon class="material-icons-outlined size-icon"> business </mat-icon>
+            <mat-menu #menu="matMenu">
+                <!--button mat-menu-item (click)="openDialog()">Open dialog</button>
+                <div>
+                    <span> Rubi Falconi Montañez </span>                    
+                    <span> rubifm.19@gmail.com </span>               
+                </div>
+                <button mat-menu-item (click)="openDialog()">Modificar Datos</button>
+                <button mat-menu-item (click)="openDialog()">Open dialog</button-->
+                <app-dialog-perfil-empresa></app-dialog-perfil-empresa>
+            </mat-menu>
+        </button>
+        
     </header>
 
     <!-- MENU DE LA PAGINA -->
@@ -33,6 +48,13 @@
                 </a>
             </mat-list-item>
 
+            <mat-list-item class="mat-list-item-a"> 
+                <a routerLink="servicios" class="buton-nav aLink content-title">
+                    <mat-icon class="item-icon">add_business</mat-icon> SERVICIOS
+                    <span class="nav-tooltip" *ngIf="isSideNavOpen">SERVICIOS</span>
+                </a>
+            </mat-list-item>
+
             <mat-list-item> 
                 <button (click)="listar()">LISTAR USUARIOS</button>
             </mat-list-item>
@@ -48,5 +70,7 @@
         </div>
     </main>
 
-    <app-login *ngIf="viewLogin" class="login" (usuarioCorrecto)="usuarioCorrecto()"></app-login>
+   
+   <app-login *ngIf="viewLogin" class="login" (usuarioCorrecto)="usuarioCorrecto()"></app-login>
+   
 </div>

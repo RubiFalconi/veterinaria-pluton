@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { BuscarMascotaComponent } from '../buscar-mascota/buscar-mascota.component';
 import { LoginComponent } from '../login/login.component';
 import { HistorialClinicoComponent } from '../historial-clinico/historial-clinico.component';
+import { ServiciosComponent } from 'src/app/componentes/servicios/servicios.component';
 
 import { OauthService } from 'src/app/service/oauth.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -33,6 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistrarseComponent } from '../registrarse/registrarse.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
+import { DialogPerfilEmpresaComponent } from './dialog-perfil-empresa/dialog-perfil-empresa.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,9 @@ import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
     BuscarMascotaComponent,
     LoginComponent,    
     HistorialClinicoComponent,    
-    RegistrarseComponent
+    RegistrarseComponent,
+    ServiciosComponent,
+    DialogPerfilEmpresaComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +70,10 @@ import { AuthInterceptor } from 'src/app/commons/AuthInterceptor';
     MatListModule,
     MatToolbarModule,
     HttpClientModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDialogModule,
+    MatMenuModule
+
   ],
   providers: [
     OauthService,
