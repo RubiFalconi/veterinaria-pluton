@@ -50,7 +50,8 @@ export class OauthService {
         this.cookieService.set('jwt', data.jwt, 900, '/');
     })
   }
-
+*/
+  /*
   setJwt( jwt : string){
     this.cookieService.set('jwt', jwt, 900, '/');
   }

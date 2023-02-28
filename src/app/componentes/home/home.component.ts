@@ -27,13 +27,11 @@ export class HomeComponent implements OnInit {
     public usaurio : UsuarioControllerNg) {
 
     // Validar si el usuario tiene una cookie activa
-    /*
-    if (this.oAuth.getJwt().length > 0){
-      const token = this.oAuth.getJwt();
-      this.tokenService.setToken(token);
+    
+    if (this.tokenService.token && this.tokenService.token.length > 0){
       this.viewLogin = false
     }
-    */
+    
     
   }
 
